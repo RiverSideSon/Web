@@ -6,14 +6,6 @@ function gerarRelatorio(){
 
     fetch(url).then(res => res.json()).then(listaEventos => preencheTabela(listaEventos));
 
-    /* se eu fosse ler como uma instrução estruturada
-
-    res = fetch(url);
-    listaEventos = res.json();
-    preencheTabela(listaEventos);
-
-    */
-
 }
 
 function preencheTabela(listaEventos){
@@ -29,7 +21,6 @@ function preencheTabela(listaEventos){
                         
                         <tbody> `;
 
-    // agora eu preciso percorrer a lista e preencher cada uma das linhas
     for (i=0; i<listaEventos.length; i++){
         let evento = listaEventos[i];
 
@@ -47,5 +38,4 @@ function preencheTabela(listaEventos){
                              </table>`;
     
     document.getElementById("relatorio").innerHTML = strTabela;
-
 }
